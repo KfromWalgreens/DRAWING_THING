@@ -1,24 +1,42 @@
+
+rect_count = 5
+rect_height = 50
+rect_width = 600 / rect_count
+
 def setup(): #runs once
-    size(500, 500)
+    size(600, 600)
+    background(255,255,255)
+    rect(0,0,rect_width, rect_height)
+    fill(245, 66, 149)
+    rect(rect_width ,0,rect_width, rect_height)
+    fill(66, 84, 245)
+    rect(rect_width*2,0,rect_width, rect_height)
+    fill(245, 233, 66)
+    rect(rect_width*3,0,rect_width, rect_height)
+    fill(84, 245, 66)
+    rect(rect_width*4,0,rect_width, rect_height)
     noStroke()
-
-
 def draw(): #runs multiple times
-    #background(200,200,200)
-    if mousePressed: 
-        fill(0,128, 128)
-        fill(mouseY, mouseX, 90)
-        #if mouseX > 250 and mouseY >  250: 
-            #fill(66, 135, 245)
-        # elif  mouseX < 250 and mouseY >  250: 
-        #     fill(245, 66, 87)
-        # elif  mouseX > 250 and mouseY <  250: 
-        #     fill(59, 217, 20)
-        # elif  mouseX < 250 and mouseY <  250: 
-        #     fill(238, 255, 0)
-        ellipse(mouseX - 50/2,mouseY -50/2,50,50)
     if keyPressed and (key == 'c' or key == 'C'):
-        background(200,200,200)
-        print(keyCode)
+        background(255,255,255)
+    if mousePressed: 
+        ellipse(mouseX,mouseY,30,30)
+    if (mouseX > rect_width and mouseX < rect_width *2 and mouseY < rect_height and mousePressed):
+        fill(245, 66, 149)
+        ellipse(mouseX,mouseY,30,30)
+    if (mouseX > rect_width *2 and mouseX < rect_width *3 and mouseY < rect_height and mousePressed):
+        fill(66, 84, 245)
+        ellipse(mouseX,mouseY,30,30)
+    if (mouseX > rect_width *3 and mouseX < rect_width *4 and mouseY < rect_height and mousePressed):
+        fill(245, 233, 66)
+        ellipse(mouseX,mouseY,30,30)
+    elif ( mouseX > rect_width *5 and mouseY < rect_height and mousePressed):
+        fill(84, 245, 66)
+        ellipse(mouseX,mouseY,30,30)
+
+        
+    
+    
+        
 
     
